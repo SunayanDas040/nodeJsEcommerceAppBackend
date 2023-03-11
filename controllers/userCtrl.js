@@ -141,7 +141,6 @@ const getAllUsers = asyncHandler(async (req, res) => {
 const getaUser = asyncHandler(async (req, res) => {
   const { id } = req.params;
   validateMongoDbId(id);
-  console.log("id : ", id);
   try {
     const getaUser = await User.findById(id);
     res.json({
@@ -250,7 +249,6 @@ const forgotPasswordToken = asyncHandler(async (req, res) => {
 const resetPassword = asyncHandler(async (req, res) => {
   const { password } = req.body;
   const { token } = req.params;
-  console.log(password, token);
   const hashedToken = crypto.createHash("sha256").update(token).digest("hex");
   const user = await User.findOne({
     passwordResetToken: hashedToken,
