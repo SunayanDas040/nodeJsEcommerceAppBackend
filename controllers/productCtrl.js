@@ -92,7 +92,6 @@ const getAllProduct = asyncHandler(async (req, res) => {
       if (skip >= productCount) throw new Error("This page does not exists");
     }
 
-
     const product = await query;
     res.json(product);
   } catch (error) {
