@@ -41,8 +41,7 @@ let userSchema = mongoose.Schema(
     },
     address: [
       {
-        type: ObjectId,
-        ref: "Address",
+        type: String,
       },
     ],
     wishlist: [
